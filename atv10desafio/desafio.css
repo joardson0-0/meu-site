@@ -1,0 +1,351 @@
+
+/* =================================
+   CONFIGURAÇÕES GERAIS
+================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --background: #0b1120;
+    --white: #ffffff;
+    --text: #172033;
+    --gray: #64748b;
+    --border: #e2e8f0;
+    --error: #dc2626;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =================================
+   FUNDO DA PÁGINA
+================================= */
+
+body {
+    font-family: 'Inter', sans-serif;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(37, 99, 235, 0.25),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(79, 70, 229, 0.20),
+            transparent 35%
+        ),
+        #0b1120;
+}
+
+/* =================================
+   CONTAINER PRINCIPAL
+================================= */
+
+.login-container {
+    position: relative;
+
+    width: 100%;
+    max-width: 440px;
+
+    padding: 45px 40px;
+
+    background: var(--white);
+
+    border: 1px solid rgba(255,255,255,0.5);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,0.35),
+        0 5px 15px rgba(0,0,0,0.08);
+
+    text-align: center;
+
+    animation: entrada 0.7s ease;
+}
+
+/* =================================
+   LOGO
+================================= */
+
+.logo {
+    width: 78px;
+    height: 78px;
+
+    margin: 0 auto 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 36px;
+
+    background: #eff6ff;
+
+    border: 1px solid #dbeafe;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 8px 20px rgba(37,99,235,0.10);
+}
+
+/* =================================
+   TÍTULO
+================================= */
+
+h1 {
+    color: var(--text);
+
+    font-size: 27px;
+    font-weight: 800;
+
+    letter-spacing: -1px;
+
+    margin-bottom: 10px;
+}
+
+/* =================================
+   SUBTÍTULO
+================================= */
+
+.subtitulo {
+    color: var(--gray);
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin-bottom: 35px;
+}
+
+/* =================================
+   CAMPOS DO FORMULÁRIO
+================================= */
+
+.campo {
+    text-align: left;
+
+    margin-bottom: 24px;
+}
+
+.campo label {
+    display: block;
+
+    color: #334155;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    margin-bottom: 9px;
+}
+
+/* =================================
+   INPUTS
+================================= */
+
+.campo input {
+    width: 100%;
+    height: 52px;
+
+    padding: 0 16px;
+
+    background: #f8fafc;
+
+    border: 1px solid var(--border);
+
+    border-radius: 11px;
+
+    color: var(--text);
+
+    font-family: inherit;
+    font-size: 14px;
+
+    outline: none;
+
+    transition: all 0.25s ease;
+}
+
+.campo input::placeholder {
+    color: #94a3b8;
+}
+
+.campo input:hover {
+    border-color: #94a3b8;
+}
+
+.campo input:focus {
+    background: #ffffff;
+
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 4px rgba(37,99,235,0.12);
+}
+
+/* =================================
+   MENSAGENS
+================================= */
+
+.mensagem-erro {
+    min-height: 20px;
+
+    margin-bottom: 15px;
+
+    color: var(--error);
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* =================================
+   BOTÃO DE LOGIN
+================================= */
+
+.botao-enviar {
+    position: relative;
+
+    width: 100%;
+    height: 54px;
+
+    border: none;
+    border-radius: 11px;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #1e40af
+    );
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    letter-spacing: 0.3px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    box-shadow:
+        0 7px 18px rgba(37,99,235,0.25);
+}
+
+.botao-enviar:hover {
+    background: linear-gradient(
+        135deg,
+        #1d4ed8,
+        #1e3a8a
+    );
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(37,99,235,0.30);
+}
+
+.botao-enviar:active {
+    transform: scale(0.98);
+}
+
+.botao-enviar:focus-visible {
+    outline: 3px solid #93c5fd;
+    outline-offset: 3px;
+}
+
+/* =================================
+   RODAPÉ
+================================= */
+
+.rodape {
+    margin-top: 32px;
+    padding-top: 22px;
+
+    border-top: 1px solid #f1f5f9;
+
+    color: #94a3b8;
+
+    font-size: 11px;
+    font-weight: 500;
+
+    letter-spacing: 0.3px;
+}
+
+/* =================================
+   ANIMAÇÃO DE ENTRADA
+================================= */
+
+@keyframes entrada {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+/* =================================
+   RESPONSIVIDADE
+================================= */
+
+@media (max-width: 500px) {
+
+    body {
+        padding: 18px;
+    }
+
+    .login-container {
+        padding: 35px 24px;
+
+        border-radius: 18px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .logo {
+        width: 68px;
+        height: 68px;
+
+        font-size: 30px;
+    }
+
+}
+
+/* =================================
+   ACESSIBILIDADE
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+
+}
